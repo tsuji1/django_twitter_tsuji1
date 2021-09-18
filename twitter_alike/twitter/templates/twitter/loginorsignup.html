@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SigninorLogin</title>
+  </head>
+  
+  <body>
+    {% if user.is_authenticated %}
+    <p>ログインできています！</p>
+
+    <a href="{% url 'logout' %}">ログアウト</a>
+    
+    {% else %}
+    
+    <a href="{% url 'login' %}">ログイン</a>
+    <a href="{% url 'accounts:signup' %}">サインイン</a>
+    {% endif %}
+  </body>
+</html>
