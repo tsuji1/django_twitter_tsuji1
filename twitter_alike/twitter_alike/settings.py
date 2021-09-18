@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-LOGIN_REDIRECT_URL = '../../twitter/'
+LOGIN_REDIRECT_URL = reverse_lazy('twitter:loginorsignup')
 LOGOUT_REDIRECT_URL=reverse_lazy('twitter:loginorsignup')
 """
 LOGIN_REDIRECT_URL = reverse_lazy('loginorsignup')
