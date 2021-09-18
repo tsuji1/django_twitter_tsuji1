@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <meta charset="utf-8" />
-    <title>LogIn</title>
-</head>
- 
-<body>
+{% extends 'registration/base.html' %}
+{% block title %}LogIn{% endblock %}
 
-    {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-    <h1>ログインですよ。</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="ログイン">
-    </form>
-    
-</body>
- 
-</html>
+{% block content %}
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+<h1>ログインですよ。</h1>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="ログイン">
+</form>
+{% endblock %}

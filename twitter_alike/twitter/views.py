@@ -6,14 +6,4 @@ from django.urls import reverse,reverse_lazy
 
 def LogInOrSignUp(request):
  return render(request,'twitter/loginorsignup.html',{})
-
-
-"""
-class SignUpView(CreateView):
-  form_class=UserCreationForm
-  template_name = 'twitter/signup.html'
-  model = UserInformation
-  fields = ['username','password']
-  
-  success_url = reverse_lazy('twitter:loginorsignup')
-"""
+ 

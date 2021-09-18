@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from django.urls import reverse_lazy
-import django.urls
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -129,10 +129,3 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = reverse_lazy('twitter:loginorsignup')
 LOGOUT_REDIRECT_URL=reverse_lazy('twitter:loginorsignup')
-"""
-LOGIN_REDIRECT_URL = reverse_lazy('loginorsignup')
-
-
-
-
-"""
