@@ -3,9 +3,17 @@
 
 {% block content %}
 <h1>新規アカウント作成です</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="アカウント作成">
-</form>
+
+{% block form %}
+
+{% with submitvalue="アカウントを作成" %}
+
+{{ block.super }}
+
+{% endwith %}
+
+{% endblock %}
+
+
+
 {% endblock %}

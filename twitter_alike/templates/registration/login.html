@@ -1,14 +1,18 @@
 {% extends 'registration/base.html' %}
+
 {% block title %}LogIn{% endblock %}
 
 {% block content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+
 <h1>ログインですよ。</h1>
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="ログイン">
-</form>
+{% block form %}
+
+{% with submitvalue="ログイン" %}
+
+{{ block.super }}
+
+{% endwith %}
+
+{% endblock %}
+
 {% endblock %}

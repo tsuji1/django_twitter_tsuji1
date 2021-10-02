@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>SigninorLogin</title>
-  </head>
-  
-  <body>
-    {% if user.is_authenticated %}
-    <p>ログインできています！</p>
+{% extends 'registration/base.html' %}
+{% block title %}twitter{% endblock %}
 
-    <a href="{% url 'logout' %}">ログアウト</a>
-    
-    {% else %}
-    
-    <a href="{% url 'login' %}">ログイン</a>
-    <a href="{% url 'accounts:signup' %}">サインイン</a>
-    {% endif %}
-  </body>
-</html>
+{% block content %}
+{% if user.is_authenticated %}
+<p>hello! {{ user.username }} </p>
+<p>ログインできています！</p>
+<a class="btn btn-outline-warning" href="{% url 'password_change' %}">パスワードの変更</a>
+
+<a class="btn btn-outline-danger" href="{% url 'logout' %}">ログアウト</a>
+
+{% else %}
+
+<a class="btn btn-outline-primary" href="{% url 'login' %}">ログイン</a>
+<a class="btn btn-outline-info" href="{% url 'accounts:signup' %}">サインイン</a>
+{% endif %}
+
+{% endblock %}
+
+ 
